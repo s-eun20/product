@@ -21,6 +21,6 @@ public class AdminController {
     public String listUsers(Model model) {
         List<User> users = userService.getAllUsers();
         model.addAttribute("users", users);
-        return "admin/users";
+        return "admin";
     }
 }

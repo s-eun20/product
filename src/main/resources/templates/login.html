@@ -46,11 +46,9 @@
                 <label for="password" class="form-label">비밀번호</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
             </div>
-            <!-- 로그인 실패 메시지 -->
             <div th:if="${param.error}" class="alert alert-danger py-2 mb-3" role="alert">
                 이메일 또는 비밀번호가 올바르지 않습니다.
             </div>
-            <!-- 로그아웃 메시지 -->
             <div th:if="${param.logout}" class="alert alert-success py-2 mb-3" role="alert">
                 로그아웃 되었습니다.
             </div>

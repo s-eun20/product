@@ -17,11 +17,14 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String brand;
+    @Column(nullable = false)
     private String madeIn;
-    @Min(value = 0, message = "Price must be greater than 0")
+    @Column(nullable = false)
+    @Min(value = 0, message = "가격은 0 이상이어야 합니다.")
     private double price;
 
     public Product(String name, String brand, String madeIn, double price) {

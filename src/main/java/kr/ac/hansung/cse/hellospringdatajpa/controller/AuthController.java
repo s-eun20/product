@@ -32,11 +32,9 @@ public class AuthController {
     @GetMapping("/login")
     public String showLoginForm(
             @RequestParam(value = "error", required = false) String error,
-            @RequestParam(value = "logout", required = false) String logout,
             Model model) {
 
         if (error != null) model.addAttribute("error", "로그인 실패");
-        if (logout != null) model.addAttribute("logout", "로그아웃 성공");
         return "login";
     }
 }

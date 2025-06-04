@@ -22,7 +22,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userRepository.findByEmail(email);
         if (user == null) throw new UsernameNotFoundException("User not found");
 
-        // 권한 설정 (ROLE_ 접두사 필수!)
+      // 권한 설정
         List<GrantedAuthority> authorities =
                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().name()));
 

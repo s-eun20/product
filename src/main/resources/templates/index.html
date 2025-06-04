@@ -9,6 +9,9 @@
 
 <body>
 <div class="container">
+  <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()" style="float:right; margin-top: 20px;">
+    <button type="submit" class="btn btn-outline-secondary">로그아웃</button>
+  </form>
   <h1 class="mt-5">Product List</h1>
 
   <div sec:authorize="hasRole('ADMIN')">

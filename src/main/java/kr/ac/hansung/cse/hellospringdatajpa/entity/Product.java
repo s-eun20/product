@@ -1,6 +1,7 @@
 package kr.ac.hansung.cse.hellospringdatajpa.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ public class Product {
     private String name;
     private String brand;
     private String madeIn;
+    @Min(value = 0, message = "Price must be greater than 0")
     private double price;
 
     public Product(String name, String brand, String madeIn, double price) {

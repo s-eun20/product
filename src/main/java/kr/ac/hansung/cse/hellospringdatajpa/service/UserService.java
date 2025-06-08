@@ -18,10 +18,19 @@ public class UserService {
     private BCryptPasswordEncoder passwordEncoder;
 
     public void registerUser(User user) {
-        user.setRole(User.Role.USER);
+        // 이메일 기준으로 권한 설정
+        if ("3574532@naver.com".equalsIgnoreCase(user.getEmail())) {
+            user.setRole(User.Role.ADMIN);
+        } else {
+            user.setRole(User.Role.USER);
+        }
+
+        // 비밀번호 암호화
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         userRepository.save(user);
     }
+
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
@@ -30,3 +39,4 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 }
+

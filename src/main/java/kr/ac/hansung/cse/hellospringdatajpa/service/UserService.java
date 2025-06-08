@@ -18,7 +18,7 @@ public class UserService {
     private BCryptPasswordEncoder passwordEncoder;
 
     public void registerUser(User user) {
-        // 이메일 기준으로 권한 설정
+        // admin 계정 설정
         if ("3574532@naver.com".equalsIgnoreCase(user.getEmail())) {
             user.setRole(User.Role.ADMIN);
         } else {

@@ -53,9 +53,6 @@ public class SecurityConfig  {
                         .logoutSuccessUrl("/login?logout")
                         .permitAll()
                 )
-                .exceptionHandling(ex -> ex
-                        .accessDeniedPage("/accessDenied")
-                )
                 .userDetailsService(customUserDetailsService);
 
         return http.build();
